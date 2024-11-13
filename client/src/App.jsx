@@ -4,6 +4,7 @@ import ListPage from './routes/listPage/listPage';
 import SinglePage from './routes/singlePage/SinglePage';
 import ProfilePage from './routes/profilePage/ProfilePage'
 import Login from './routes/login/login';
+import Register from './routes/register/register';
 
 import {
   createBrowserRouter,
@@ -28,10 +29,14 @@ function App() {
           path: '/:id',
           element: <SinglePage />
         },
+        // {
+        //   path: '/profile',
+        //   element: <ProfilePage />
+        // },
         {
-          path: '/profile',
-          element: <ProfilePage />
-        },
+          path: "/register",
+          element: <Register />
+        }
       ]
     },
   ]);
