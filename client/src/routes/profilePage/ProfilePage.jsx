@@ -1,7 +1,6 @@
-import React, {useState, useContext}  from 'react'
+import React, {useState, useContext, useEffect}  from 'react'
 import { AuthContext } from '../../context/AuthContext'
 import { Link, useNavigate } from 'react-router-dom'
-import { listData } from '../../lib/dummydata'
 import List from '../../components/list/List'
 import Chat from '../../components/chat/Chat'
 import './profilePage.scss'
@@ -9,7 +8,6 @@ import apiRequest from "../../lib/apiRequest";
 
 const ProfilePage = () => {
     const {updateUser, currentUser} = useContext(AuthContext)
-    
     const navigate = useNavigate()
 
     const handleLogout = async () => {
@@ -23,6 +21,7 @@ const ProfilePage = () => {
     }
 
     return (
+        currentUser && (
         <div className='profilePage'>
             <div className="details">
                 <div className="wrapper">
@@ -65,7 +64,8 @@ const ProfilePage = () => {
                 </div>
             </div>
         </div>
-  )
+        )
+    )
 }
 
 export default ProfilePage

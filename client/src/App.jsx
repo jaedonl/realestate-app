@@ -1,8 +1,9 @@
-import Layout from './routes/layout/layout';
+import {Layout, RequiredAuth} from './routes/layout/layout';
 import HomePage from './routes/homePage/homePage';
 import ListPage from './routes/listPage/listPage';
 import SinglePage from './routes/singlePage/SinglePage';
 import ProfilePage from './routes/profilePage/ProfilePage'
+import ProfileUpdatePage from './routes/profileUpdatePage/profileUpdatePage';
 import Login from './routes/login/login';
 import Register from './routes/register/register';
 
@@ -30,10 +31,6 @@ function App() {
           element: <SinglePage />
         },
         {
-          path: '/profile',
-          element: <ProfilePage />
-        },
-        {
           path: "/login",
           element: <Login />,
         },
@@ -43,6 +40,20 @@ function App() {
         }
       ]
     },
+    {
+      path: "/",
+      element: <RequiredAuth />,
+      children: [
+        {
+          path: '/profile',
+          element: <ProfilePage />
+        },
+        {
+          path: '/profile/update',
+          element: <ProfileUpdatePage />
+        },
+      ]
+    }
   ]);
 
   return (
