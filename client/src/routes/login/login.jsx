@@ -20,11 +20,12 @@ function Login() {
 
     const username = formData.get("username");
     const password = formData.get("password");
+    // const { username, password } = Object.fromEntries(formData);
 
     try {
       const res = await apiRequest.post("/auth/login", {
-        username,
-        password,
+        username: username,
+        password: password,
       });
 
       updateUser(res.data)
