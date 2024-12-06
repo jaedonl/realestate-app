@@ -6,7 +6,7 @@ import { getPost, getPosts, addPost, updatePost, deletePost } from '../controlle
 const router = express.Router();
 
 router.get('/', getPosts)
-router.get('/:id ', getPost)
+router.get('/:id', getPost)
 router.post('/', verifyToken, addPost)
 router.put('/:id', verifyToken, updatePost)
 router.delete('/:id', verifyToken, deletePost)
