@@ -9,6 +9,7 @@ function Login() {
   const [isLoading, setIsLoading] = useState(false);
   const {updateUser} = useContext(AuthContext)
 
+  
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -38,6 +39,7 @@ function Login() {
       setIsLoading(false);
     }
   };
+
   return (
     <div className="login">
       <div className="formContainer">
